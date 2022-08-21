@@ -14,9 +14,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-// import { useNavigate } from 'react-router-dom';
-// import { Link } from 'react-router-dom';
-import { AppNavLink } from '../Components/AppNavLink';
+import { Link as RouterLink } from 'react-router-dom';
 
 export default function NavigationPanel() {
     const sideBar = 'left';
@@ -31,11 +29,7 @@ export default function NavigationPanel() {
         }
         setDrawerOpen(isOpen);
     };
-    // const OnClickLink = () => {
-    //     let navigate = useNavigate();
-    //     console.log(' I AM TRYING TO NAVIGATE!!!');
-    //     navigate('../temp', { replace: false });
-    // };
+
     const list = () => (
         <Box
             sx={{ width: 250 }}
@@ -48,34 +42,29 @@ export default function NavigationPanel() {
             </Typography>
             <Divider />
             <List>
-                <ListItem
-                    key={'x'}
-                    disablePadding
-                    component={AppNavLink}
-                    to={'/'}
-                >
-                    <ListItemButton
-                        onClick={() =>
-                            console.log('Formula ONE Page is being clicked!')
-                        }
-                    >
+                <ListItem key={'x'} disablePadding>
+                    <ListItemButton component={RouterLink} to={'/'}>
                         <ListItemIcon>
                             <InboxIcon />
                         </ListItemIcon>
-                        <ListItemText primary={'Formula ONE Page'} />
+                        <ListItemText primary={'Yankee GO HOME'} />
                     </ListItemButton>
                 </ListItem>
-                <ListItem
-                    key={'y'}
-                    disablePadding
-                    component={AppNavLink}
-                    to={'/temp'}
-                >
-                    <ListItemButton>
+                <ListItem key={'y'} disablePadding>
+                    <ListItemButton component={RouterLink} to={'/temp'}>
                         <ListItemIcon>
                             <InboxIcon />
                         </ListItemIcon>
-                        <ListItemText primary={'Formula TWO Page'} />
+                        <ListItemText primary={'GO TO TEMP PAGE'} />
+                    </ListItemButton>
+                </ListItem>
+
+                <ListItem key={'a'} disablePadding>
+                    <ListItemButton component={RouterLink} to={'/'}>
+                        <ListItemIcon>
+                            <InboxIcon />
+                        </ListItemIcon>
+                        <ListItemText primary={'Got to HOME PAGE'} />
                     </ListItemButton>
                 </ListItem>
             </List>
