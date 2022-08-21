@@ -47,7 +47,7 @@ export default function NavigationPanel() {
                         <ListItemIcon>
                             <InboxIcon />
                         </ListItemIcon>
-                        <ListItemText primary={'Yankee GO HOME'} />
+                        <ListItemText primary={'Basic Calculator'} />
                     </ListItemButton>
                 </ListItem>
                 <ListItem key={'y'} disablePadding>
