@@ -19,7 +19,6 @@ import { Link as RouterLink } from 'react-router-dom';
 export default function NavigationPanel() {
     const sideBar = 'left';
     const [drawerOpen, setDrawerOpen] = React.useState(false);
-
     const toggleDrawer = (isOpen) => (event) => {
         if (
             event.type === 'keydown' &&
