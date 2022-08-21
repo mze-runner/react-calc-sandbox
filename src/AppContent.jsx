@@ -1,7 +1,7 @@
 import { Container } from '@mui/material';
 
-function PageContent() {
+function AppContent() {
     return <Container>This is test page content </Container>;
 }
 
-export default PageContent;
+export default AppContent;

@@ -14,6 +14,9 @@ import MenuIcon from '@mui/icons-material/Menu';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+// import { useNavigate } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import { AppNavLink } from '../Components/AppNavLink';
 
 export default function NavigationPanel() {
     const sideBar = 'left';
@@ -28,7 +31,11 @@ export default function NavigationPanel() {
         }
         setDrawerOpen(isOpen);
     };
-
+    // const OnClickLink = () => {
+    //     let navigate = useNavigate();
+    //     console.log(' I AM TRYING TO NAVIGATE!!!');
+    //     navigate('../temp', { replace: false });
+    // };
     const list = () => (
         <Box
             sx={{ width: 250 }}
@@ -41,7 +48,12 @@ export default function NavigationPanel() {
             </Typography>
             <Divider />
             <List>
-                <ListItem key={'x'} disablePadding>
+                <ListItem
+                    key={'x'}
+                    disablePadding
+                    component={AppNavLink}
+                    to={'/'}
+                >
                     <ListItemButton
                         onClick={() =>
                             console.log('Formula ONE Page is being clicked!')
@@ -51,6 +63,19 @@ export default function NavigationPanel() {
                             <InboxIcon />
                         </ListItemIcon>
                         <ListItemText primary={'Formula ONE Page'} />
+                    </ListItemButton>
+                </ListItem>
+                <ListItem
+                    key={'y'}
+                    disablePadding
+                    component={AppNavLink}
+                    to={'/temp'}
+                >
+                    <ListItemButton>
+                        <ListItemIcon>
+                            <InboxIcon />
+                        </ListItemIcon>
+                        <ListItemText primary={'Formula TWO Page'} />
                     </ListItemButton>
                 </ListItem>
             </List>
